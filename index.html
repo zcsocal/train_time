@@ -3,28 +3,98 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Train Scheduler</title>
+    <title>Train Scheduler Admin Panel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
-
-    <!-- JS -->
-    <script src="assets/app.js"></script>
-
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
-
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css"> -->
+    
+    <!-- jquery -->
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+   
     <!-- Moment -->
     <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 
-    
 
 </head>
 <body>
+
+        <div class="container">
+                <!-- JUMBOTRON ROW -->
+                <div class="row">
+                        <div class="jumbotron">
+                                <h1 class="display-4">Train Scheduler Admin Panel</h1>
+                                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                                <hr class="my-4">
+                                
+                         </div>
+                </div>
+                <!-- END JUMBOTRON ROW -->
+
+                <!-- BEGIN SCHEDULE DISPLAY ROW -->
+                <div class="row">
+                    Current Train Schedule
+
+                    <hr>
+
+                    <table class="table" id="trainTable">
+                            <!-- Table header -->
+                            <thead>
+                              <tr>
+                                <th>Train Name</th>
+                                <th>Destination</th>
+                                <th>Next Arrival</th>
+                                <th>Minutes Away</th>
+                              </tr>
+                            </thead>
+                            <!-- Table body - populated by JS, Firebase-->
+                            <tbody>
+                              
+                            </tbody>
+                          </table>
+
+                </div>
+                <!-- END SCHEDULE DISPLAY ROW -->
+
+
+                <!-- BEGIN SCHEDULE ENTRY FORM ROW -->
+                <div class="row">
+                 
+                    <form>
+                        
+                        Train Name<br/>
+                        <input class="form-control" type="text" placeholder="i.e. Enterprise" id="nameInput">
+
+                        Destination<br/>
+                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="destinationInput">
+
+                        First Train Time (HH:mm) <br/>
+                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="timeInput">
+
+                        Frequency (min) <br/>
+                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="frequencyInput">
+
+                        <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
+
+                    </form>
+                </div>
+                <!-- END SCHEDULE ENTRY FORM ROW -->
+        </div>
+
+
+       
+
+
+
+<!-- JS -->
+<script src="assets/app.js"></script>
+       
     
 </body>
 </html>
