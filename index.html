@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- CSS -->
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css"> -->
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/style.css">
     
     <!-- jquery -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
@@ -30,8 +30,8 @@
                 <div class="row">
                         <div class="jumbotron">
                                 <h1 class="display-4">Train Scheduler Admin Panel</h1>
-                                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                                <hr class="my-4">
+                                <p class="lead">Use this admin panel to add new train schedules. The schedules will update in the schedule list.</p>
+                                
                                 
                          </div>
                 </div>
@@ -39,13 +39,13 @@
 
                 <!-- BEGIN SCHEDULE DISPLAY ROW -->
                 <div class="row">
-                    Current Train Schedule
+                    <h1 class="headers">Current Train Schedule</h1>
 
                     <hr>
 
-                    <table class="table" id="trainTable">
+                    <table class="table  " id="trainTable">
                             <!-- Table header -->
-                            <thead>
+                            <thead class="thead-dark">
                               <tr>
                                 <th>Train Name</th>
                                 <th>Destination</th>
@@ -55,6 +55,7 @@
                               </tr>
                             </thead>
                             <!-- Table body - populated by JS, Firebase-->
+                          
                             <tbody>
                               
                             </tbody>
@@ -66,20 +67,24 @@
 
                 <!-- BEGIN SCHEDULE ENTRY FORM ROW -->
                 <div class="row">
+                    <hr class="blue_wide_hr">
+                    <h1 class="headers">Add a train schedule</h1>
+                    <hr class="blue_wide_hr">
+                    
                  
                     <form>
                         
                         Train Name<br/>
-                        <input class="form-control" type="text" placeholder="i.e. Enterprise" id="nameInput">
+                        <input class="form-control" type="text" placeholder="Enterprise" id="nameInput">
 
                         Destination<br/>
-                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="destinationInput">
+                        <input class="form-control" type="text" placeholder="Los Angeles" id="destinationInput">
 
                         First Train Time (HH:mm) <br/>
-                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="timeInput">
+                        <input class="form-control" type="text" placeholder="14:30" id="timeInput">
 
                         Frequency (min) <br/>
-                        <input class="form-control" type="text" placeholder="i.e. Los Angeles" id="frequencyInput">
+                        <input class="form-control" type="text" placeholder="60" id="frequencyInput">
 
                         <button type="submit" class="btn btn-primary" id="addTrainBtn">Submit</button>
 

@@ -1,0 +1,73 @@
+
+
+
+
+body {
+    background-color: whitesmoke;
+    background-image: url("https://www.amtrak.com/content/dam/projects/dotcom/english/public/images/heros/Route_PacificSurfliner_HeroBanner_3.jpg/_jcr_content/renditions/cq5dam.web.2125.1195.jpeg");
+}
+
+.container {
+    width: 100%;
+    padding-right: 42px;
+    padding-left: 42px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: white;
+}
+
+table {
+    width: 100%;
+}
+
+.jumbotron {
+    
+    background-color: var(--cyan);
+    border-radius: 0rem;
+    width: 100%;
+}
+
+.display-4 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: white;
+}
+
+.headers {
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #17a2b8;
+}
+
+.lead {
+    color: white;
+}
+
+.table .thead-dark th {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: white;
+}
+
+hr.blue_wide_hr {
+    border: 10px solid #17a2b8;
+    width: 100%;
+    margin-top: 0px;
+    margin-bottom: 29px;
+    
+  }
+
+
+form {
+    /* width: 100%; */
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #17a2b8;
+    border-color: #007bff;
+    margin-top: 10px;
+    
+}

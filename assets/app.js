@@ -1,4 +1,5 @@
 
+//Firebase setup
 var config = {
     apiKey: "AIzaSyC2iJjF3Pqsko0OVzBwGY96XrfDCBSoLoI",
     authDomain: "train-e860c.firebaseapp.com",
@@ -9,8 +10,11 @@ var config = {
   };
   firebase.initializeApp(config);
 
+  //Variable that essentially connects our user entered data to the firebase database
   var trainData = firebase.database();
 
+  //Jqueary - Then submit button is pressed, the value of data from these corresponding fields will be trimmed
+  // The time input will be handled with Moment
   $("#addTrainBtn").on("click", function(){
       var trainName = $("#nameInput").val().trim();
       var destination = $("#destinationInput").val().trim();
@@ -24,9 +28,14 @@ var config = {
             frequency: frequency
       }
 
+      //The new train data is pushed into database.
       trainData.ref().push(addNewTrain);
 
       alert("Your entry was successful.");
+
+
+      // Some tests to make sure it's working
+      
 
       // Form fields do populate the console
       // console.log(trainName);
@@ -37,11 +46,13 @@ var config = {
       
   })
 
-  trainData.ref().on("child_added", function(snapshot){
-    var name = snapshot.val().name;
-    var destination = snapshot.val().destination;
-    var frequency = snapshot.val().frequency;
-    var firstTrain = snapshot.val().firstTrain;
+  //The following pulls the data from database and displays it on the empty table body in html
+    
+  trainData.ref().on("child_added", function(dataPull){
+    var name = dataPull.val().name;
+    var destination = dataPull.val().destination;
+    var frequency = dataPull.val().frequency;
+    var firstTrain = dataPull.val().firstTrain;
 
     var remainder = moment().diff(moment.unix(firstTrain),"minutes")%frequency;
     var minutes = frequency - remainder;
@@ -51,6 +62,7 @@ var config = {
     console.log(minutes);
     console.log(arrival);
 
+    //Jquery to append the table row with cells into the table body. Each cell has a data var plugged into it.
     $("#trainTable > tbody").append("<tr><td>"+name+"</td><td>"+destination+"</td><td>"+frequency+"</td><td>"+arrival+"</td><td>"+minutes+"</td></tr>");
    
 
